@@ -1,11 +1,25 @@
 package io.git.github.com.Curso_SpringBoot.produtosapi.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Produtos")
 public class Produto {
 
+   @Id
+ @Column(name = "id")
+     private String id;
 
-    private String id;
+ @Column(name = "nome")
     private String nome;
-    private String Categoria;
+
+ @Column(name = "descricao")
+    private String descricao;
+
+ @Column(name = "preco")
     private Double preco;
 
     public String getId() {
@@ -24,12 +38,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getCategoria() {
-        return Categoria;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setCategoria(String categoria) {
-        Categoria = categoria;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public Double getPreco() {
@@ -45,7 +59,7 @@ public class Produto {
         return "Produto{" +
                 "id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
-                ", Categoria='" + Categoria + '\'' +
+                ", descricao='" + descricao + '\'' +
                 ", preco=" + preco +
                 '}';
     }
